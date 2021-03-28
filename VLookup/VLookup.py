@@ -26,9 +26,9 @@
 import os
 
 # Initilize variables that holds path for both the input files
-Text_File1 = r'C:\Users\Raghavapurapu Eswar\Desktop\Text_File1.txt'
-Text_File2 = r'C:\Users\Raghavapurapu Eswar\Desktop\Text_File2.txt'
-Output_File = r'C:\Users\Raghavapurapu Eswar\Desktop\Output.txt'
+Text_File1 = r'...\Text_File1.txt'
+Text_File2 = r'...\Text_File2.txt'
+Output_File = r'...\Output.txt'
 
 #Open Output file in append mode
 OFile = open(Output_File,'w+')
