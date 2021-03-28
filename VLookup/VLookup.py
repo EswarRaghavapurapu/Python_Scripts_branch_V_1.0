@@ -28,6 +28,10 @@ import os
 # Initilize variables that holds path for both the input files
 Text_File1 = r'C:\Users\Raghavapurapu Eswar\Desktop\Text_File1.txt'
 Text_File2 = r'C:\Users\Raghavapurapu Eswar\Desktop\Text_File2.txt'
+Output_File = r'C:\Users\Raghavapurapu Eswar\Desktop\Output.txt'
+
+#Open Output file in append mode
+OFile = open(Output_File,'w+')
 
 # Open the Input files in read mode and read the lines in each of these text files
 TFile1 = open(Text_File1,'r')
@@ -61,13 +65,15 @@ for each in TFile_lines1:
                 List_Var1.append("REQ"+word.lstrip().strip())
         #print (lists)
         if any(x in List_Var2 for x in List_Var1):
-            print("TP_REQ_FILE_"+str(index).zfill(3))
+            OFile.write("TP_REQ_FILE_"+str(index).zfill(3)+"\n")
         for each in List_Var1:            
             if each in List_Var2:
-                print(each)
+                OFile.write(each+"\n")
+                #print(each)
         #print (lists)
         List_Var1.clear()
     else:
         if "REQ"+each[:-1].lstrip().strip() in List_Var2:
-            print("TP_REQ_FILE_"+str(index).zfill(3))
-            print("REQ"+each[:-1].lstrip().strip())
+            OFile.write("TP_REQ_FILE_"+str(index).zfill(3)+"\n")
+            OFile.write("REQ"+each[:-1].lstrip().strip()+"\n")
+OFile.close()
